@@ -1,0 +1,63 @@
+import type { Quest } from '../types';
+
+/** Cuatro preguntas de la jornada: cada partida recibe copias nuevas. */
+export function createQuests(): Quest[] {
+  return [
+    {
+      id: 'quest-checkin',
+      title: 'Primera pista',
+      npcId: 'npc-checkin',
+      gateId: 'gate-security',
+      intro: 'Antes de comenzar el recorrido por el aeropuerto, Marina quiere confirmar que realmente conoces a Elias.',
+      question: '¿Cuál es el color favorito de Elias?',
+      options: ['Negro', 'Azul', 'Rojo', 'Verde'],
+      correctIndex: 0,
+      explanation: 'Eso es: negro. El primer paso quedó liberado.',
+      wrongHint: 'Piensa en el estilo que Elias suele usar de pies a cabeza.',
+      status: 'pending',
+      attempts: 0,
+    },
+    {
+      id: 'quest-security',
+      title: 'Un recuerdo',
+      npcId: 'npc-security',
+      gateId: 'gate-boarding',
+      intro: 'El control de seguridad encontró una pregunta importante escondida en tu equipaje.',
+      question: '¿Quién dijo “te amo” primero?',
+      options: ['Elias', 'Catalina', 'Los dos al mismo tiempo', 'Nadie lo recuerda'],
+      correctIndex: 1,
+      explanation: 'Correcto: Catalina lo dijo primero. El salón de embarque está liberado.',
+      wrongHint: 'Fue Catalina quien se atrevió primero.',
+      status: 'pending',
+      attempts: 0,
+    },
+    {
+      id: 'quest-boarding',
+      title: 'Su destino',
+      npcId: 'npc-pilot',
+      gateId: 'gate-tarmac',
+      intro: 'El comandante mira el panel de destinos y hace la pregunta más fácil del viaje.',
+      question: '¿Dónde vive Elias?',
+      options: ['Recife', 'São Paulo', 'Santiago', 'Buenos Aires'],
+      correctIndex: 0,
+      explanation: 'Exacto: Recife. El camino hacia la pista está abierto.',
+      wrongHint: 'Es una ciudad brasileña soleada, en la costa de Pernambuco.',
+      status: 'pending',
+      attempts: 0,
+    },
+    {
+      id: 'quest-tarmac',
+      title: 'La última puerta',
+      npcId: 'npc-tarmac',
+      gateId: 'gate-final',
+      intro: 'Ya casi llegas. Solo falta recordar algo que siempre hace feliz a Elias.',
+      question: '¿Cuál es la comida favorita de Elias?',
+      options: ['Pizza', 'Sushi', 'Hamburguesa', 'Lasaña'],
+      correctIndex: 0,
+      explanation: '¡Pizza! La última puerta quedó liberada.',
+      wrongHint: 'Es redonda, llega en una caja y combina con cualquier noche.',
+      status: 'pending',
+      attempts: 0,
+    },
+  ];
+}
